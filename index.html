@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <title>j'apprends html<title>
+    </head>
     <body>
-        <div contenteditable="true"> j'apprends html!</div>
+        <div id="edit" contenteditable="true"></div>
+        
+        <script>
+            var edit = document.getElementById('edit');
+            edit.innerHTML = localStorage.getItem('edit');
+            edit.addEventListener('blur', function() {
+                localStorage.setItem('edit', this.innerHTML);
+            });
+        </script>
     </body>
 </html>
